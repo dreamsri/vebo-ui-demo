@@ -3,89 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#0f6cbd">
-  <title>Vebo UI Demo</title>
+  <meta name="theme-color" content="#1769c2">
+  <title>Vebo UI — Design System Demo</title>
   <style>
-    :root {
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #172033;
-      background: #f7f8fb;
-      --page-padding: clamp(16px, 4vw, 32px);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; min-width: 320px; overflow-x: hidden; }
-    header {
-      padding: 28px var(--page-padding);
-      background: #0f6cbd;
-      color: white;
-    }
-    header .header-inner { max-width: 1100px; margin: auto; }
-    header h1 { margin: 0 0 8px; font-size: clamp(28px, 7vw, 40px); line-height: 1.1; }
-    header p { margin: 0; font-size: clamp(14px, 3.5vw, 17px); line-height: 1.5; opacity: .95; }
-    main { width: 100%; max-width: 1100px; margin: auto; padding: 20px var(--page-padding) 48px; }
-    section {
-      background: white;
-      border: 1px solid #e4e7ec;
-      border-radius: 14px;
-      padding: clamp(16px, 4vw, 24px);
-      margin: 16px 0;
-      box-shadow: 0 1px 2px rgb(0 0 0 / 4%);
-    }
-    section h2 { margin: 0 0 16px; font-size: clamp(18px, 5vw, 22px); }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-      gap: 12px;
-    }
-    .demo-box {
-      min-width: 0;
-      padding: 14px;
-      border: 1px dashed #cbd0d9;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
-    vebo-button, vebo-input, vebo-masked-input, vebo-textarea, vebo-date-time-picker, vebo-date-range-picker {
-      max-width: 100%;
-    }
-    @media (max-width: 600px) {
-      header { padding: 24px var(--page-padding); }
-      main { padding-top: 12px; }
-      section { margin: 12px 0; }
-      .grid { grid-template-columns: 1fr; gap: 10px; }
-      .demo-box { padding: 12px; }
-    }
-    @media (min-width: 601px) and (max-width: 850px) {
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
+    :root{font-family:"Segoe UI",Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#252525;background:#f5f6f7;--blue:#1769c2;--surface:#fff;--border:#d0d4d9;--muted:#5f6368;--soft:#e9f2fb;--skeleton:#eef0f2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px}.app{display:grid;grid-template-columns:220px 1fr;min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--border);padding:20px 14px;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:700;margin:0 8px 24px}.brand-mark{width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center}.nav-label{font-size:10px;font-weight:700;color:#73777c;text-transform:uppercase;letter-spacing:.08em;margin:18px 8px 6px}.nav a{display:block;padding:9px 10px;border-radius:7px;color:#3f4348;text-decoration:none;font-size:13px}.nav a.active{background:var(--soft);color:var(--blue);font-weight:600}.main{min-width:0}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;padding:0 28px;position:sticky;top:0;z-index:5}.search{max-width:500px;flex:1;border:1px solid var(--border);border-radius:7px;padding:10px 13px;color:#777;background:#fafbfc}.content{max-width:1240px;margin:auto;padding:24px 28px 48px}.hero{margin-bottom:20px}.hero h1{font-size:27px;margin:0 0 5px}.hero p{margin:0;color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px}.card{grid-column:span 6;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:19px;box-shadow:0 1px 2px #0000000d}.wide{grid-column:1/-1}.card h2{font-size:17px;margin:0 0 4px}.card p{font-size:13px;color:var(--muted);margin:0 0 16px}.palette{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}.swatch{height:58px;border-radius:8px;border:1px solid #0001}.primary{background:#1769c2}.secondary{background:#155ea9}.success{background:#16833b}.warning{background:#a86b00}.danger{background:#c73a3a}.neutral{background:#252525}.swatch-label{font-size:10px;color:var(--muted);margin-top:5px}.type-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #eef0f2}.type-row:last-child{border-bottom:0}.display{font-size:28px;font-weight:600}.h1{font-size:21px;font-weight:600}.h2{font-size:17px;font-weight:600}.body-lg{font-size:16px}.body{font-size:14px}.caption{font-size:12px;color:var(--muted)}.meta{font-size:10px;color:#73777c;white-space:nowrap}.row{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.demo{display:grid;gap:13px}.skeleton-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.sk{background:linear-gradient(90deg,#eef0f2 25%,#f7f8f9 50%,#eef0f2 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:6px}.avatar{width:40px;height:40px;border-radius:50%}.line{height:10px;margin:7px 0}.short{width:55%}.block{height:105px}.sk-row{display:flex;gap:10px;align-items:center}.nav-demo{display:flex;gap:20px;border:1px solid var(--border);padding:11px 13px;border-radius:8px}.nav-demo .active{color:var(--blue);font-weight:600;border-bottom:2px solid var(--blue);padding-bottom:7px}.mini-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.mini{border:1px solid var(--border);border-radius:8px;padding:13px}.mini h3{font-size:13px;margin:9px 0 3px}.mini p{font-size:11px;margin:0;color:var(--muted)}.code{background:#f7f8f9;border:1px solid #e3e6e8;border-radius:7px;padding:10px;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;overflow:auto}.footer{text-align:center;color:var(--muted);font-size:12px;padding:28px 0}@keyframes shimmer{to{background-position:-200% 0}}@media(max-width:850px){.app{grid-template-columns:72px 1fr}.sidebar{padding:16px 9px}.brand{justify-content:center}.brand span{display:none}.nav-label{display:none}.nav a{font-size:0;text-align:center}.nav a::first-letter{font-size:16px}.card{grid-column:1/-1}}@media(max-width:620px){.app{display:block}.sidebar{height:auto;position:sticky;top:0;z-index:10;border-right:0;border-bottom:1px solid var(--border);padding:9px 11px}.brand{justify-content:flex-start;margin:0 0 7px}.brand span{display:inline}.nav{display:flex;gap:4px;overflow:auto}.nav a{font-size:12px;white-space:nowrap;padding:7px 9px}.topbar{display:none}.content{padding:17px 14px 36px}.palette{grid-template-columns:repeat(3,1fr)}.skeleton-grid,.mini-cards{grid-template-columns:1fr}.hero h1{font-size:23px}}
+@media(prefers-reduced-motion:reduce){.sk{animation:none}html{scroll-behavior:auto}}
   </style>
   <script type="module" src="./vebo-ui.js"></script>
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <h1>Vebo UI</h1>
-      <p>Native Web Components demo — Angular, React, Vue and HTML compatible.</p>
-    </div>
-  </header>
-  <main>
-    <section>
-      <h2>Form Components</h2>
-      <div class="grid">
-        <div class="demo-box"><label>Button</label><vebo-button>Primary action</vebo-button></div>
-        <div class="demo-box"><label>Text input</label><vebo-input placeholder="Enter text"></vebo-input></div>
-        <div class="demo-box"><label>Password</label><vebo-input type="password" placeholder="Password"></vebo-input></div>
-        <div class="demo-box"><label>Number</label><vebo-input type="number" placeholder="0"></vebo-input></div>
-        <div class="demo-box"><label>Masked input</label><vebo-masked-input placeholder="Phone"></vebo-masked-input></div>
-        <div class="demo-box"><label>Multiline</label><vebo-textarea placeholder="Write something..."></vebo-textarea></div>
-        <div class="demo-box"><label>Date & time</label><vebo-date-time-picker></vebo-date-time-picker></div>
-        <div class="demo-box"><label>Date range</label><vebo-date-range-picker></vebo-date-range-picker></div>
-      </div>
-    </section>
-  </main>
+<div class="app">
+  <aside class="sidebar"><div class="brand"><div class="brand-mark">V</div><span>Vebo UI</span></div><div class="nav-label">Foundations</div><nav class="nav"><a class="active" href="#overview">Overview</a><a href="#tokens">Design Tokens</a><a href="#typography">Typography</a><a href="#color">Color</a><a href="#skeleton">Skeleton</a></nav><div class="nav-label">Components</div><nav class="nav"><a href="#buttons">Buttons</a><a href="#inputs">Inputs</a><a href="#navigation">Navigation</a><a href="#cards">Cards</a></nav></aside>
+  <main class="main"><header class="topbar"><div class="search">⌕ &nbsp; Search components, tokens...</div><span>☼</span><span>GitHub</span><span>SS</span></header><div class="content">
+    <section id="overview" class="hero"><h1>Vebo UI design system</h1><p>Native Web Components with Fabric-inspired typography, Vebo-adjusted colors and Material-inspired skeleton patterns.</p></section>
+    <div class="grid">
+      <section id="color" class="card wide"><h2>Color palette</h2><p>Vebo uses the Fabric/Fluent interaction model without copying source colors exactly.</p><div class="palette"><div><div class="swatch primary"></div><div class="swatch-label">Primary<br>#1769C2</div></div><div><div class="swatch secondary"></div><div class="swatch-label">Hover<br>#155EA9</div></div><div><div class="swatch success"></div><div class="swatch-label">Success<br>#16833B</div></div><div><div class="swatch warning"></div><div class="swatch-label">Warning<br>#A86B00</div></div><div><div class="swatch danger"></div><div class="swatch-label">Danger<br>#C73A3A</div></div><div><div class="swatch neutral"></div><div class="swatch-label">Text<br>#252525</div></div></div></section>
+      <section id="typography" class="card"><h2>Typography</h2><p>Segoe UI first, with Inter and system fallbacks.</p><div class="type-row"><span class="display">The quick brown fox</span><span class="meta">Display · 28/34 · 600</span></div><div class="type-row"><span class="h1">Heading one</span><span class="meta">H1 · 21/27 · 600</span></div><div class="type-row"><span class="h2">Heading two</span><span class="meta">H2 · 17/24 · 600</span></div><div class="type-row"><span class="body-lg">Body large</span><span class="meta">16/22 · 400</span></div><div class="type-row"><span class="body">Body text</span><span class="meta">14/20 · 400</span></div><div class="type-row"><span class="caption">Caption</span><span class="meta">12/17 · 400</span></div></section>
+      <section id="buttons" class="card"><h2>Buttons</h2><p>Existing Vebo components rendered with the new token layer.</p><div class="demo"><div class="row"><vebo-button variant="primary">Primary</vebo-button><vebo-button variant="secondary">Secondary</vebo-button><vebo-button variant="danger">Danger</vebo-button><vebo-button variant="ghost">Ghost</vebo-button></div><div class="row"><vebo-button loading>Loading</vebo-button><vebo-button disabled>Disabled</vebo-button></div></div></section>
+      <section id="inputs" class="card"><h2>Input fields</h2><p>Form controls inherit Vebo typography, spacing and focus behavior.</p><div class="demo"><vebo-input label="Full name" placeholder="Jane Doe" hint="Your display name"></vebo-input><vebo-input label="Password" type="password" placeholder="Enter password"></vebo-input><vebo-input label="Invalid email" error="Please enter a valid email address"></vebo-input></div></section>
+      <section id="skeleton" class="card wide"><h2>Skeletons — Material-inspired</h2><p>Reference treatment for future Vebo skeleton components: neutral base, subtle shimmer, 6px radius and reduced-motion support.</p><div class="skeleton-grid"><div><div class="sk-row"><div class="sk avatar"></div><div style="flex:1"><div class="sk line"></div><div class="sk line short"></div></div></div><div class="sk block" style="margin-top:13px"></div></div><div><div class="sk line"></div><div class="sk line"></div><div class="sk line short"></div><div class="sk line" style="margin-top:20px"></div><div class="sk line short"></div></div></div></section>
+      <section id="navigation" class="card"><h2>Navigation</h2><p>Simple active state with a restrained underline.</p><div class="nav-demo"><span class="active">Home</span><span>Products</span><span>Customers</span><span>Reports</span></div></section>
+      <section id="cards" class="card"><h2>Cards</h2><p>Low-elevation surfaces with clear borders.</p><div class="mini-cards"><div class="mini"><div class="sk block" style="height:50px"></div><h3>Card title</h3><p>Supporting text</p></div><div class="mini"><div class="sk avatar"></div><h3>Card title</h3><p>Supporting text</p></div><div class="mini"><h3>Card title</h3><p>Supporting text</p></div></div></section>
+      <section id="tokens" class="card wide"><h2>User token override</h2><p>Applications can override Vebo visual tokens without rebuilding the library.</p><div class="code">.my-app { --vebo-color-primary: #1769c2; --vebo-radius-lg: 10px; --vebo-font-family: "Segoe UI", sans-serif; }</div></section>
+    </div><div class="footer">Vebo UI · Demo site · Default design template</div>
+  </div></main>
+</div>
 </body>
 </html>
